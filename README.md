@@ -53,6 +53,40 @@ Usage Example     :
 
 <img width="858" height="158" alt="Image" src="https://github.com/user-attachments/assets/4464e378-8ba2-4663-aa72-b92f93c8ca1b" />  
 
+# %upset_plot()
+ Description    : Generates an UpSet plot to visualize co-occurrence patterns across   
+                  multiple items per individual. If no input dataset is provided,   
+                  a synthetic test dataset is generated internally.  
+                  The macro performs data preprocessing, aggregation, transposition,  
+                  and graphical rendering using PROC TEMPLATE and PROC SGRENDER.  
+
+ Parameters     :   
+ ~~~text
+    data     = Input dataset name (if not specified, a test dataset is auto-generated)
+    personID = Variable name identifying individuals (e.g., ID)
+    itemnum  = Numeric variable representing item code (e.g., itemnum)
+    itemname = Character variable for item label (e.g., itemname)
+    width    = Width of the output PNG image in pixels (default: 1000)
+    height   = Height of the output PNG image in pixels (default: 650)
+~~~
+ Output         :   
+ ~~~text
+    - Intermediate datasets are created in the WORK/temp library.
+    - Final output is rendered as a PNG-based UpSet plot using ODS Graphics.
+~~~
+ Requirements   : 
+    - If specifying a dataset via `data=`, the variables passed in 
+      `personID=`, `itemnum=`, and `itemname=` must exist in that dataset.
+
+ Example Usage  :  
+~~~sas
+    %upset_plot(data=testdata_upset, personID=ID ,itemnum=itemnum, itemname=itemname);
+~~~
+
+~~~sas
+    %upset_plot(data=demodata, personID=SUBJID, itemnum=symptom_code, itemname=symptom_label);
+~~~
+
 # version history
 0.1.0(28July2025): Initial version
 
