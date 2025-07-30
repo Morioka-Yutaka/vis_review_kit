@@ -82,7 +82,8 @@ Usage Example     :
 ~~~sas
     %upset_plot(data=testdata_upset, personID=ID ,itemnum=itemnum, itemname=itemname);
 ~~~
-<img width="601" height="368" alt="Image" src="https://github.com/user-attachments/assets/88d29046-8c19-4d09-be4a-f82bae5a7c7d" />
+<img width="601" height="368" alt="Image" src="https://github.com/user-attachments/assets/88d29046-8c19-4d09-be4a-f82bae5a7c7d" />  
+
 ~~~sas
     %upset_plot(data=demodata, personID=SUBJID, itemnum=symptom_code, itemname=symptom_label);
 ~~~
