@@ -88,7 +88,13 @@ Usage Example     :
     %upset_plot(data=demodata, personID=SUBJID, itemnum=symptom_code, itemname=symptom_label);
 ~~~
 
+~~~sas
+%upset_plot(data=pokemon, personID=pokemon_name ,itemnum=typen, itemname=type);
+~~~
+<img width="599" height="383" alt="Image" src="https://github.com/user-attachments/assets/9bc7eb74-a1bf-4164-9bda-ac4c8c82a0ef" />
+
 # version history
+0.2.0(31July2025): Upset-Plot Add
 0.1.0(28July2025): Initial version
 
 ## What is SAS Packages?  
