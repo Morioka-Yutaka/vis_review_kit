@@ -1,7 +1,7 @@
 Type : Package
 Package : vis_review_kit
 Title : vis_review_kit
-Version : 0.1.0
+Version : 0.2.0
 Author : Yutaka Morioka(sasyupi@gmail.com)
 Maintainer : Yutaka Morioka(sasyupi@gmail.com)
 License : MIT

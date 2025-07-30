@@ -9,17 +9,17 @@
 ### Version information:
   
 - Package: vis_review_kit
-- Version: 0.1.0
-- Generated: 2025-07-28T23:02:44
+- Version: 0.2.0
+- Generated: 2025-07-31T03:22:45
 - Author(s): Yutaka Morioka(sasyupi@gmail.com)
 - Maintainer(s): Yutaka Morioka(sasyupi@gmail.com)
 - License: MIT
-- File SHA256: `F*202D395474873ECAD7D49007C35ABEB61396B9092209AE5F35E96448B532AF33` for this version
-- Content SHA256: `C*C9F645B01A78F8A6A3E9E3543D0F5BC9CA487356B91157D6D617FFCF0F83E8A5` for this version
+- File SHA256: `F*A4AECC99B93032F771E837359ECC881058041476A6F6777DFC9397473E7C58D8` for this version
+- Content SHA256: `C*5C63DB627EEE9C12037C2743AE1A2D0979C31C9F4F423AF002988790038210C9` for this version
   
 ---
  
-# The `vis_review_kit` package, version: `0.1.0`;
+# The `vis_review_kit` package, version: `0.2.0`;
   
 ---
  
@@ -47,9 +47,10 @@ Required SAS Components:
 The `vis_review_kit` package consists of the following content:
  
 1. [`%event_gant_excel()` macro ](#eventgantexcel-macros-1 )
+2. [`%upset_plot()` macro ](#upsetplot-macros-2 )
   
  
-2. [License note](#license)
+3. [License note](#license)
   
 ---
  
@@ -98,6 +99,40 @@ Usage Example     :
         target_st=AESTDY,
         target_en=AEENDY
     );
+
+  
+---
+ 
+## `%upset_plot()` macro <a name="upsetplot-macros-2"></a> ######
+
+Macro Name     : %upset_plot
+
+ Description    : Generates an UpSet plot to visualize co-occurrence patterns across 
+                  multiple items per individual. If no input dataset is provided, 
+                  a synthetic test dataset is generated internally.
+                  The macro performs data preprocessing, aggregation, transposition,
+                  and graphical rendering using PROC TEMPLATE and PROC SGRENDER.
+
+ Parameters     :
+    data     = Input dataset name (if not specified, a test dataset is auto-generated)
+    personID = Variable name identifying individuals (e.g., ID)
+    itemnum  = Numeric variable representing item code (e.g., itemnum)
+    itemname = Character variable for item label (e.g., itemname)
+    width    = Width of the output PNG image in pixels (default: 1000)
+    height   = Height of the output PNG image in pixels (default: 650)
+
+ Output         : 
+    - Intermediate datasets are created in the WORK/temp library.
+    - Final output is rendered as a PNG-based UpSet plot using ODS Graphics.
+
+ Requirements   : 
+    - If specifying a dataset via `data=`, the variables passed in 
+      `personID=`, `itemnum=`, and `itemname=` must exist in that dataset.
+
+ Example Usage  :
+    %upset_plot(data=demodata, personID=SUBJID, itemnum=symptom_code, itemname=symptom_label);
+
+ Author         : Morioka Yutaka
 
   
 ---
