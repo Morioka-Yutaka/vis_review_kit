@@ -1,7 +1,7 @@
 # vis_review_kit
 Visual tools for reviewing and monitoring clinical trial data. A SAS macro package to support QC and exploration through graphical representations.
 
-![vis_review_kit](./vis_review_kit_small.png)  
+<img width="350" height="350" alt="Image" src="https://github.com/user-attachments/assets/2faf2f54-416c-4174-9474-8fb5f71ae36c" />
 
 # %event_gant_excel()
 Description       : 
